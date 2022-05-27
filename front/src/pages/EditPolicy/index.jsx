@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import suggest from './suggest.png';
+import suggest from './idea.png';
 
 function EditPolicy() {
   const { id } = useParams();
@@ -66,7 +66,7 @@ function EditPolicy() {
   }
 
   return (
-    <div style={{ color: "#424242" }}>
+    <div style={{ color: "white" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Policy</h2>
       <br></br>
       <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ width: "30rem", fontWeight: "bolder" }}>
@@ -140,7 +140,7 @@ function EditPolicy() {
       </form>
       <form style={{ float: "right", marginTop: "-580px", opacity: "100%" }}>
         <div>
-          <img src={suggest} alt="your suggestions" />
+          <img src={suggest} alt="your suggestions" style={{ width: "32rem" }}/>
         </div>
       </form>
     </div>

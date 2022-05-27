@@ -1,8 +1,8 @@
 /** @format */
 import React, { useState } from "react";
 import axios from "axios";
-//import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import suggest from './party.png';
 
 function AddParty() {
   const [data, setData] = useState({
@@ -45,7 +45,7 @@ function AddParty() {
   };
 
   return (
-    <div style={{ color: "#424242" }}>
+    <div style={{ color: "white" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Party</h2>
       <br></br>
       <form
@@ -110,6 +110,11 @@ function AddParty() {
             value="Add Parties"
             className="btn btn-dark"
           />
+        </div>
+      </form>
+      <form style={{ float: "right", marginTop: "-400px" }}>
+        <div>
+          <img src={suggest} alt="your suggestions" style={{ width: "15rem", marginLeft: "-400px" }}/>
         </div>
       </form>
     </div>

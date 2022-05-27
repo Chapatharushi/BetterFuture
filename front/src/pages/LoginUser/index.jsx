@@ -43,7 +43,7 @@ function LoginUser() {
 
   return (
     <center>
-      <div style={{ justifyContent: "center" }}>
+      <div style={{ color: "white", justifyContent: "center" }}>
         <div>
           <center>
             <img src={login} alt="login" style={{ width: "300px" }} />
@@ -64,7 +64,7 @@ function LoginUser() {
           style={{ width: "30rem", fontWeight: "bolder" }}
         >
           <div className="form-group">
-            <label>E-mail</label>
+            <label>Email Address</label>
             <input
               type="email"
               name="email"

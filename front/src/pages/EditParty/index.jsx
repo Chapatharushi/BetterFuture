@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import suggest from "./party.png";
 
 function EditParty() {
   const { id } = useParams();
@@ -65,7 +66,7 @@ function EditParty() {
   }
 
   return (
-    <div style={{ color: "#424242" }}>
+    <div style={{ color: "white" }}>
        <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Party</h2>
       <br></br>
       <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ width: "30rem", fontWeight: "bolder" }}>
@@ -125,6 +126,11 @@ function EditParty() {
             value="Edit Parties"
             className="btn btn-dark"
           />
+        </div>
+      </form>
+      <form style={{ float: "right", marginTop: "-400px" }}>
+        <div>
+          <img src={suggest} alt="your suggestions" style={{ width: "15rem", marginLeft: "-400px" }}/>
         </div>
       </form>
     </div>

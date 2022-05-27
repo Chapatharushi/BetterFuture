@@ -1,22 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import betterfuture from "./bf.png";
+import Bfuture from "./BetterFuture.png"
 
 function Landing() {
   return (
     <div>
       <br></br>
+      <center>
+      <img
+          src={Bfuture}
+          alt="BetterFuture"
+          style={{ width: "200px", marginTop: "1rem" }}
+        />
+      </center>
       <div>
-        <center><img
+        <center>
+        <img
           src={betterfuture}
           alt="Better Future"
-          style={{ width: "900px", marginTop: "7rem" }}
-        /></center>
+          style={{ width: "900px", marginTop: "3rem" }}
+        />
+        </center>
       </div>
       <br></br>
       <center><div
         className="row"
-        style={{ fontFamily: "bolder", marginTop: "12rem"}}
+        style={{ fontFamily: "bolder", marginTop: "3rem"}}
       >
         <div className="col">
           <Link
@@ -26,7 +36,7 @@ function Landing() {
               letterSpacing: "1.5px",
               width: "20rem",
             }}
-            className="btn btn-dark"
+            className="btn btn-light"
           >
             Sign Up
           </Link>

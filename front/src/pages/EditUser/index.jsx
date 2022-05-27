@@ -68,7 +68,7 @@ function EditUser() {
   }
 
   return (
-    <div style={{ color: "#424242" }}>
+    <div style={{ color: "white" }}>
      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit User Info</h2>
       <br></br>
       <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ float: "left", width: "30rem", fontWeight: "bolder" }}>

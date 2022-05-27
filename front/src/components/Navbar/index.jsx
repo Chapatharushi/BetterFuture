@@ -27,11 +27,6 @@ const NavBar = () => (
             Party
           </Link>
         </li>
-        {/* <li className="navbar-item">
-          <Link to="/dashUser" className="nav-link">
-            User Profile
-          </Link>
-        </li> */}
         <li className="navbar-item" style={{ float: "right", marginLeft: "800px" }}>
           <Link to="/user" className="nav-link">
           <img src={user} alt="user" style={{width: "2rem"}}/>
@@ -47,7 +42,7 @@ const NavBar = () => (
             }}
             className="btn btn-dark"
           >
-            Sign out
+            Sign Out
           </Link>
         </li>
       </ul>

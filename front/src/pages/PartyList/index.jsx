@@ -44,7 +44,7 @@ function PartiesList() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "bolder", fontStyle: "italic", color: "#424242" }}>Party Info</h2>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic", color: "white" }}>Party Info</h2>
       <br></br>
       <table className="table">
         <thead className="thead-light">

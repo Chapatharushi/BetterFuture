@@ -50,7 +50,7 @@ function CreateUser() {
   };
 
   return (
-    <div style={{ marginRight: "10rem",marginLeft: "10rem", justifyContent: "center" }}>
+    <div style={{ color: "white", marginRight: "10rem",marginLeft: "10rem", justifyContent: "center" }}>
       <br></br>
       <br></br>
       <h2 style={{ fontFamily: "bolder", marginLeft: "27rem", fontSize: "2rem" }}>Register Below</h2>

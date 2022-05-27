@@ -59,7 +59,7 @@ function EditUser() {
   }
 
   return (
-    <div style={{ marginLeft: "20rem", justifyContent: "center" }}>
+    <div style={{ color: "white", marginLeft: "20rem", justifyContent: "center" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic", marginLeft: "10rem" }}>My Profile</h2>
       <br></br>
         <div>
@@ -68,7 +68,7 @@ function EditUser() {
       <form
         noValidate
         onSubmit={(e) => onSubmitForm(e)}
-        style={{ width: "30rem", fontWeight: "bolder" }}
+        style={{ width: "30rem", fontWeight: "bolder", color: "white" }}
       >
         <br></br>
         <div className="form-group">
@@ -78,7 +78,7 @@ function EditUser() {
             required
             className="form-control"
             value={user.fullname}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent",color:"white" }}
           />
         </div>
         <div className="form-group">
@@ -88,7 +88,7 @@ function EditUser() {
             required
             className="form-control"
             value={user.nic}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent" ,color:"white"}}
           />
         </div>
         <div className="form-group">
@@ -97,7 +97,7 @@ function EditUser() {
             name="email"
             className="form-control"
             value={user.email}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent",color:"white" }}
           />
         </div>
         <div className="form-group">
@@ -106,7 +106,7 @@ function EditUser() {
             name="phonenu"
             className="form-control"
             value={user.phonenu}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent",color:"white" }}
           />
         </div>
         <div className="form-group">
@@ -115,7 +115,7 @@ function EditUser() {
             name="school"
             className="form-control"
             value={user.school}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color:"white" }}
           />
         </div>
         <div className="form-group">
@@ -124,7 +124,7 @@ function EditUser() {
             name="qualification"
             className="form-control"
             value={user.qualification}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent",color:"white" }}
           />
         </div>
         <br></br>

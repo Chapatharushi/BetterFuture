@@ -1,7 +1,7 @@
 /** @format */
 import React, { useState } from "react";
 import axios from "axios";
-import suggest from './suggest.png';
+import suggest from './idea.png';
 
 function CreatePolicy() {
   const [data, setData] = useState({
@@ -44,7 +44,7 @@ function CreatePolicy() {
   };
 
   return (
-    <div style={{ color: "#424242" }}>
+    <div style={{ color: "white" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Suggest a Policy</h2>
       <br></br>
       <form
@@ -120,9 +120,9 @@ function CreatePolicy() {
           />
         </div>
       </form>
-      <form style={{ float: "right", marginTop: "-580px", opacity: "100%" }}>
+      <form style={{ float: "right", marginTop: "-580px" }}>
         <div>
-          <img src={suggest} alt="your suggestions" />
+          <img src={suggest} alt="your suggestions" style={{ width: "32rem" }}/>
         </div>
       </form>
     </div>

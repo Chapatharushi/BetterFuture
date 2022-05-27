@@ -62,7 +62,7 @@ function AddPolitician() {
   };
 
   return (
-    <div style={{ color: "#424242" }}>
+    <div style={{ color: "white" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Politician</h2>
       <br></br>
       <form
