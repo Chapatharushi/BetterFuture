@@ -11,7 +11,7 @@ import PoliciesList from "../pages/PolicyList";
 import Policy from "../pages/Policy";
 import CreateUser from "../pages/CreateUser";
 import EditUser from "../pages/EditUser";
-import UserList from "../pages/UserList";
+import UserList from "../pages/UserProfile";
 import User from "../pages/User";
 import LoginUser from "../pages/LoginUser";
 import AddParty from "../pages/AddParty";

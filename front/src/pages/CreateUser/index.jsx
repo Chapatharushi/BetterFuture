@@ -42,7 +42,7 @@ function CreateUser() {
       });
 
       console.log(res.data);
-      alert("Data Saved Successfully!");
+      //alert("Data Saved Successfully!");
       window.location.assign("http://localhost:3000/login");
     } catch (error) {
       console.log(error);
@@ -77,7 +77,6 @@ function CreateUser() {
         style={{ float: "left", width: "30rem", fontWeight: "bolder" }}
       >
         <h5 style={{ fontStyle: "italic" }}>BASIC INFO</h5>
-        <br></br>
         <div className="form-group">
           <label>Fullname :</label>
           <input
@@ -90,7 +89,6 @@ function CreateUser() {
             style={{ background: "transparent" }}
           />
         </div>
-        <br></br>
         <div className="form-group">
           <label>NIC :</label>
           <input
@@ -103,7 +101,6 @@ function CreateUser() {
             style={{ background: "transparent" }}
           />
         </div>
-        <br></br>
         <div className="form-group">
           <label>Date of Birth :</label>
           <div>
@@ -119,7 +116,6 @@ function CreateUser() {
             />
           </div>
         </div>
-        <br></br>
         <div className="form-group">
           <label>Gender</label>
           <div className="form-group" style={{ fontWeight: "normal" }}>
@@ -145,15 +141,7 @@ function CreateUser() {
             <label> Female </label>
           </div>
         </div>
-        <br></br>
-      </form>
-      <form
-        noValidate
-        onSubmit={(e) => onSubmitForm(e)}
-        style={{ float: "right", width: "30rem", fontWeight: "bolder" }}
-      >
         <h5 style={{ fontStyle: "italic" }}>CONTACT INFO</h5>
-        <br></br>
         <div className="form-group">
           <label>Email Address :</label>
           <input
@@ -176,7 +164,12 @@ function CreateUser() {
             style={{ background: "transparent" }}
           />
         </div>
-        <br></br>
+        </form>
+      <form
+        noValidate
+        onSubmit={(e) => onSubmitForm(e)}
+        style={{ float: "right", width: "30rem", fontWeight: "bolder" }}
+      >
         <h5 style={{ fontStyle: "italic" }}>EDUCATIONAL INFO</h5>
         <br></br>
         <div className="form-group">
@@ -197,6 +190,31 @@ function CreateUser() {
             name="qualification"
             className="form-control"
             value={data.qualification}
+            onChange={handleChange}
+            style={{ background: "transparent" }}
+          />
+        </div>
+        <br></br>
+        <h5 style={{ fontStyle: "italic" }}>SECURITY INFO</h5>
+        <br></br>
+        <div className="form-group">
+          <label>Password :</label>
+          <input
+            type="text"
+            name="password"
+            className="form-control"
+            value={data.password}
+            onChange={handleChange}
+            style={{ background: "transparent" }}
+          />
+        </div>
+        <div className="form-group">
+          <label>Confirm Password :</label>
+          <input
+            type="text"
+            name="passwordCheck"
+            className="form-control"
+            value={data.passwordCheck}
             onChange={handleChange}
             style={{ background: "transparent" }}
           />

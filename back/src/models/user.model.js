@@ -11,6 +11,7 @@ const userSchema = new Schema(
     phonenu : {type: String, require: true},
     school : {type: String, require: true},
     qualification : {type: String, require: true},
+    password: { type: String, required: true, minlength: 5 },
   },
   {
     timestamps: true,

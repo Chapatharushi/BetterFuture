@@ -1,4 +1,8 @@
 const UserService = require("../services/user.service");
+const UserModel = require("../models/user.model");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const auth = require("../middleware/auth");
 const { validationResult } = require("express-validator");
 const httpStatus = require("http-status");
 
@@ -12,7 +16,7 @@ const createUser = async (req, res) => {
         .json({ message: "Invalid request", errors: errors.array() });
     }
 
-    const { fullname, nic, dob, gender, email, phonenu, school, qualification } = req.body;
+    const { fullname, nic, dob, gender, email, phonenu, school, qualification, password, passwordCheck } = req.body;
 
     const result = await UserService.createUsers({
       fullname,
@@ -23,10 +27,12 @@ const createUser = async (req, res) => {
       phonenu,
       school,
       qualification,
+      password,
+      passwordCheck,
     });
-    return res.status(httpStatus.OK).json({ result });
+      return res.status(httpStatus.OK).json({ result });
   } catch (error) {
-    return res.status(httpStatus[400]).json({ error });
+      return res.status(httpStatus[400]).json({ error });
   }
 };
 
@@ -57,7 +63,7 @@ const findOneUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const id = req.params.id;
-    const { fullname, nic, dob, gender, email, phonenu, school, qualification } = req.body;
+    const { fullname, nic, dob, gender, email, phonenu, school, qualification, password, passwordCheck } = req.body;
 
     const result = await UserService.updateUser({
       id,
@@ -69,6 +75,8 @@ const updateUser = async (req, res) => {
       phonenu,
       school,
       qualification,
+      password,
+      passwordCheck
     });
 
     return res.status(httpStatus.OK).json({ result });
@@ -89,10 +97,59 @@ const userDelete = async ( req, res ) => {
   }
 };
 
+const userLogin = async ( req, res ) => {
+  try {
+    const { email, password } = req.body;
+    // validate
+    if (!email || !password)
+      return res.status(400).json({ msg: "Not all fields have been entered." });
+
+    const user = await UserModel.findOne({ email: email });
+    if (!user)
+      return res
+        .status(400)
+        .json({ msg: "No account with this email has been registered." });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    //if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
+
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    console.log("token",token);
+    res.json({
+      token,
+      user: {
+        message: "User Login Successful",
+        id: user._id,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+const tokenValid = async (req, res) => {
+  try {
+    const token = req.header("x-auth-token");
+    if (!token) return res.json(false);
+
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    if (!verified) return res.json(false);
+
+    const user = await UserModel.findById(verified.id);
+    if (!user) return res.json(false);
+
+    return res.json(true);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   createUser,
   findOneUser,
   findAllUsers,
   updateUser,
   userDelete,
+  userLogin,
+  tokenValid,
 };

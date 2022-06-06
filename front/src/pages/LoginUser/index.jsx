@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import login from "./userlogin.png";
+import login from "./createuser.png";
 
 function LoginUser() {
   const [data, setData] = useState({
@@ -26,7 +26,7 @@ function LoginUser() {
       const res = await axios({
         method: "post",
         baseURL: "http://localhost:3333",
-        url: "/api/v1/user/",
+        url: "/api/v1/user/login",
         data: data,
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +34,7 @@ function LoginUser() {
       });
 
       console.log(res.data);
-      alert("Data Saved Successfully!");
+      //alert("Data Saved Successfully!");
       window.location.assign("http://localhost:3000/dashPolitician");
     } catch (error) {
       console.log(error);
@@ -44,9 +44,11 @@ function LoginUser() {
   return (
     <center>
       <div style={{ color: "white", justifyContent: "center" }}>
+        <br></br>
+        <br></br>
         <div>
           <center>
-            <img src={login} alt="login" style={{ width: "300px" }} />
+            <img src={login} alt="login" style={{ width: "200px" }} />
           </center>
         </div>
         <br></br>

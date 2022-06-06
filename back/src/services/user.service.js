@@ -4,23 +4,36 @@ const UserModel = require("../models/user.model");
 const APIError = require("../helpers/api-error");
 const logger = require("../helpers/logger");
 
-const createUsers = async ({ fullname, nic, dob, gender, email, phonenu, school, qualification}) => {
+const createUsers = async ({
+  fullname,
+  nic,
+  dob,
+  gender,
+  email,
+  phonenu,
+  school,
+  qualification,
+  password,
+  passwordCheck,
+}) => {
   let session = null;
   try {
     session = await mongoose.startSession();
     session.startTransaction();
 
     const user = new UserModel({
-      fullname, 
-      nic, 
-      dob, 
-      gender, 
-      email, 
-      phonenu, 
-      school, 
+      fullname,
+      nic,
+      dob,
+      gender,
+      email,
+      phonenu,
+      school,
       qualification,
+      password,
+      passwordCheck,
     });
-
+    
     const createUsers = await user.save({ session });
 
     if (!createUsers) {
@@ -77,11 +90,34 @@ const getUserById = async (id) => {
   }
 };
 
-const updateUser = async ({ id, fullname, nic, dob, gender, email, phonenu, school, qualification }) => {
+const updateUser = async ({
+  id,
+  fullname,
+  nic,
+  dob,
+  gender,
+  email,
+  phonenu,
+  school,
+  qualification,
+  password,
+  passwordCheck,
+}) => {
   try {
     const user = await UserModel.findById(id);
 
-    user.overwrite({ fullname, nic, dob, gender, email, phonenu, school, qualification });
+    user.overwrite({
+      fullname,
+      nic,
+      dob,
+      gender,
+      email,
+      phonenu,
+      school,
+      qualification,
+      password,
+      passwordCheck,
+    });
     await user.save();
 
     return {

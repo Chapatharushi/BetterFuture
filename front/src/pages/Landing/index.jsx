@@ -19,14 +19,14 @@ function Landing() {
         <img
           src={betterfuture}
           alt="Better Future"
-          style={{ width: "900px", marginTop: "3rem" }}
+          style={{ width: "500px", marginTop: "5rem", position: "absolute", marginLeft: "-250px" }}
         />
         </center>
       </div>
       <br></br>
       <center><div
         className="row"
-        style={{ fontFamily: "bolder", marginTop: "3rem"}}
+        style={{ fontFamily: "bolder", marginTop: "12rem"}}
       >
         <div className="col">
           <Link

@@ -49,9 +49,9 @@ function PartiesList() {
       <table className="table">
         <thead className="thead-light">
           <tr>
-            <th>PartName</th>
-            <th>PartyLeader</th>
-            <th>PartySecretary</th>
+            <th>Party Name</th>
+            <th>Party Leader</th>
+            <th>Party Secretary</th>
             <th>No Of Mps</th>
             <th>Actions</th>
           </tr>
