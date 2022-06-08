@@ -47,7 +47,6 @@ function EditUser() {
 
       console.log(res.data);
       window.location.assign("http://localhost:3000/user");
-      alert("Updated Successfully!");
     } catch (error) {
       console.log(error);
     }
@@ -59,16 +58,16 @@ function EditUser() {
   }
 
   return (
-    <div style={{ color: "white", marginLeft: "20rem", justifyContent: "center" }}>
-      <h1 style={{ fontFamily: "bolder", fontStyle: "normal", marginLeft: "8rem" }}>WELCOME !</h1>
+    <div>
+      <h1 style={{ fontFamily: "bolder", color: "white", textAlign: "center" }}>WELCOME !</h1>
       <br></br>
         <div>
-          <img src={ userP } alt="user" style={{ width: "15%", marginLeft: "10rem" }} />
+          <img src={ userP } alt="user" style={{ width: "25%", float: "left", marginLeft: "15em", marginTop: "2em" }} />
         </div>
       <form
         noValidate
         onSubmit={(e) => onSubmitForm(e)}
-        style={{ width: "30rem", fontWeight: "bolder", color: "white" }}
+        style={{ width: "20rem", fontWeight: "bolder", float: "right", marginRight: "15em" }}
       >
         <br></br>
         <div className="form-group">
@@ -78,7 +77,7 @@ function EditUser() {
             required
             className="form-control"
             value={user.fullname}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color: "white", textAlign: "center" }}
           />
         </div>
         <div className="form-group">
@@ -88,7 +87,7 @@ function EditUser() {
             required
             className="form-control"
             value={user.nic}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color: "white", textAlign: "center" }}
           />
         </div>
         <div className="form-group">
@@ -97,7 +96,7 @@ function EditUser() {
             name="email"
             className="form-control"
             value={user.email}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color: "white", textAlign: "center" }}
           />
         </div>
         <div className="form-group">
@@ -106,7 +105,7 @@ function EditUser() {
             name="phonenu"
             className="form-control"
             value={user.phonenu}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color: "white", textAlign: "center" }}
           />
         </div>
         <div className="form-group">
@@ -115,7 +114,7 @@ function EditUser() {
             name="school"
             className="form-control"
             value={user.school}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color: "white", textAlign: "center" }}
           />
         </div>
         <div className="form-group">
@@ -124,14 +123,14 @@ function EditUser() {
             name="qualification"
             className="form-control"
             value={user.qualification}
-            style={{ background: "transparent" }}
+            style={{ background: "transparent", color: "white", textAlign: "center" }}
           />
         </div>
         <br></br>
         <div>
           <Link
             className="btn btn-dark"
-            style={{ marginLeft: "8.5rem", width: "12rem" }}
+            style={{ width: "12rem", marginLeft: "4rem" }}
             to={`${RoutePaths.editUser}${user._id}`}
           >
             Edit Info
